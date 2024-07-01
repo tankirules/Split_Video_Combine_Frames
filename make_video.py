@@ -70,8 +70,8 @@ def make_video(video_name, video_path, folder, output_folder):
     # video = ffmpeg.concat(files, 'unsafe')
     
     video = ffmpeg.input('files.txt', format='concat', safe=0)
-    censored_vid_nam = video_name + '_censored.mp4'
-    output_path = os.path.join(output_folder, censored_vid_nam)
+    out_vid_nam = video_name + '_combined.mp4'
+    output_path = os.path.join(output_folder, out_vid_nam)
     ffmpeg.concat(video, audio, v=1, a=1).output(output_path).run()
     # (
     #     ffmpeg
